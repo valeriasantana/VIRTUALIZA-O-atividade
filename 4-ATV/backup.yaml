@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: virtnginx
+  name: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: virtnginx
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: virtnginx
+    spec:
+      containers:
+      - image: nginx:1.17.6-alpine
+        name: nginx
+        resources: {}
+status: {}
